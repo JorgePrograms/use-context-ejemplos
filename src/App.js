@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Boton from './botones-adelante-atras/Boton';
+import { NumeroContextProvider } from './botones-adelante-atras/NumeroContext';
+import ContainerTema from './cambiar-tema/ContainerTema';
+import ContainerSayayin from './lista-sayayin/ContainerSayayin';
+
+
+import MiComponente from './cambiar-valor/MiComponente';
+import {  MyContextProvider} from './cambiar-valor/MyContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+<NumeroContextProvider>
+    <Boton />
+  </NumeroContextProvider>
+  <MyContextProvider>
+  <MiComponente />
+  </MyContextProvider>
+<ContainerTema />
+<ContainerSayayin />
     </div>
-  );
+    
+  )
 }
 
 export default App;
